@@ -1,0 +1,159 @@
+// Use a hosted font so typography stays consistent without bundling local font assets.
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primary-font: 'Roboto', sans-serif;
+$primary-color: #43c3d1;
+$secondary-color: #0284ff;
+$tertiary-color: #2f4858;
+$primary-white: #ffffff;
+$primary-black: #061123;
+
+// Base text defaults are centralized here so component styles only override when necessary.
+body {
+    font-family: $primary-font;
+    font-size: 1em;
+    font-weight: 500;
+    color: $primary-black;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: $primary-color;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: $secondary-color;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: $tertiary-color;
+}
+
+a {
+    color: $primary-black;
+    text-decoration: none;
+
+    &::hover {
+        color: $primary-color;
+        text-decoration: underline;
+    }
+}
+
+.primary-text {
+    color: $primary-color;
+}
+
+.secondary-text {
+    color: $secondary-color;
+}
+
+.tertiary-text {
+    color: $tertiary-color;
+}
+
+ul {
+    padding-left: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+.container {
+    // Wider max-width supports large hero and product layouts on desktop while Bootstrap handles smaller breakpoints.
+    max-width: 1540px;
+}
+
+.btn {
+    .btn-size {
+        background-color: rgba($primary-black, 0.03);
+        border-color: rgba($primary-black, 0.05);
+        padding: 7px 15px;
+
+        &.active {
+            background-color: rgba($primary-black, 0.20);
+            color: $primary-white;
+        }
+
+        &::hover {
+            background-color: rgba($primary-black, 0.20);
+            color: $primary-black;
+        }
+    }
+
+    &.btn-primary {
+        background-color: $primary-color;
+        color: $primary-white;
+        border-color: $primary-color;
+        padding: 7px 25px;
+        cursor: pointer;
+
+        &::hover {
+            background-color: $primary-color;
+            border-color: $primary-black;
+            color: $primary-white;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $primary-black;
+        color: $primary-white;
+        border-color: $primary-black;
+        padding: 7px 25px;
+        cursor: pointer;
+
+        &::hover {
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: $primary-white;
+        }
+    }
+}
+
+header {
+    .nav-link {
+        color: $primary-black;
+        font-weight: 500;
+        font-size: 1.2em;
+
+        &::hover {
+            color: $primary-color;
+        }
+    }
+
+    .navbar-expand-lg {
+        .navbar-nav {
+            .nav-link {
+                &.active {
+                    padding: 10px 15px;
+                    font-size: 1.2em;
+                    font-weight: 500;
+                    color: $primary-black;
+                }
+            }
+        }
+    }
+}
+
+.section-1 {
+    .swiper {
+        .swiper-wrapper {
+            .swiper-slide {
+                // Fixed slide height keeps hero composition stable while images swap.
+                height: 650px;
+                .content {
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}
