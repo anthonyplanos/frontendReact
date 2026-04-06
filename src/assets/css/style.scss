@@ -24,13 +24,13 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 700;
     color: $secondary-color;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: 700;
     color: $tertiary-color;
 }
@@ -147,11 +147,63 @@ header {
             .swiper-slide {
                 // Fixed slide height keeps hero composition stable while images swap.
                 height: 650px;
+
                 .content {
                     height: 100%;
                     width: 100%;
                     background-size: cover;
                     background-position: center;
+                }
+            }
+        }
+    }
+}
+
+.product {
+    overflow: hidden;
+
+    .card-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+                transition: transform 0.3s ease;
+            }
+        }
+
+        .card-body {
+
+            .card-title {
+                margin-top: 15px;
+                font-size: 1.2em;
+                color: $primary-color;
+            }
+
+            .card-text {
+                margin-top: 10px;
+                font-size: 0.9em;
+                color: $primary-black;
+            }
+
+            .price {
+                margin-top: 10px;
+                font-size: 1.1em;
+                font-weight: 700;
+                color: $secondary-color;
+
+                span {
+                    color: rgba($primary-black, 0.5);
+                    text-decoration: line-through;
                 }
             }
         }

@@ -1,11 +1,12 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Logo from '../../assets/images/logo.png'
+import Logo from '../assets/images/logo.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import SliderOneImg from '../../assets/images/shop.jpg'
-import SliderTwoImg from '../../assets/images/shop1.jpg'
+import SliderOneImg from '../assets/images/shop.jpg'
+import SliderTwoImg from '../assets/images/shop1.jpg'
+import LatestProducts from './common/LatestProducts';
 
 const Home = () => {
     return (
@@ -40,7 +41,7 @@ const Home = () => {
                                 </a>
                                 <a href='' className='ms-3'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L1.01 3H.5a.5.5 0 0 1-.5-.5zM3.14 4l1.25 6h8.22l1.25-6H3.14zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />                                    
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L1.01 3H.5a.5.5 0 0 1-.5-.5zM3.14 4l1.25 6h8.22l1.25-6H3.14zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
                                     </svg>
                                 </a>
                             </div>
@@ -59,32 +60,15 @@ const Home = () => {
                     onSwiper={(swiper) => console.log('swiper', swiper)}
                 >
                     <SwiperSlide>
-                        <div className='content' style={{backgroundImage: `url(${SliderOneImg})`}}></div>
+                        <div className='content' style={{ backgroundImage: `url(${SliderOneImg})` }}></div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className='content' style={{backgroundImage: `url(${SliderTwoImg})`}}></div>
+                        <div className='content' style={{ backgroundImage: `url(${SliderTwoImg})` }}></div>
                     </SwiperSlide>
                 </Swiper>
             </section>
 
-            {/* Product grid structure is intentionally reusable so additional cards can be duplicated with the same markup. */}
-            <section className='section-2 py-5'>
-                <div className='container'>
-                    <h2 className='text-center mb-5'>New Arrivals</h2>
-                    <div className='row g-4'>
-                        <div className='col-md-4'>
-                            <div className='card'>
-                                <img src={ProductImg1} className='card-img-top' alt='Product 1' />
-                                <div className='card-body'>
-                                    <h5 className='card-title'>Product 1</h5>
-                                    <p className='card-text'>Description of Product 1.</p>
-                                    <a href='#' className='btn btn-primary'>Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <LatestProducts />
         </>
     )
 }
