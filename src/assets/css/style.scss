@@ -141,6 +141,41 @@ header {
     }
 }
 
+footer {
+    background-color: $tertiary-color;
+    color: $primary-white;
+    padding: 20px 0;
+
+    span {
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: $primary-white;
+    }
+
+    ul {
+        display: flex;
+        gap: 20px;
+        padding-left: 0;
+        margin-top: 10px;
+
+        li {
+            list-style: none;
+
+            a {
+                color: $primary-white;
+
+                &::hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
 .section-1 {
     .swiper {
         .swiper-wrapper {
@@ -160,6 +195,9 @@ header {
 }
 
 .product {
+    border: 1px solid rgba($primary-black, 0.12);
+    border-radius: 12px;
+    background-color: $primary-white;
     overflow: hidden;
 
     .card-img {
@@ -167,10 +205,15 @@ header {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 100%;
+
         img {
-            border-radius: 10px;
+            display: block;
             width: 100%;
-            height: auto;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 0;
+            border-bottom: 1px solid rgba($primary-black, 0.12);
             transition: transform 0.3s ease;
         }
 
@@ -182,9 +225,9 @@ header {
         }
 
         .card-body {
+            width: 100%;
 
             .card-title {
-                margin-top: 15px;
                 font-size: 1.2em;
                 color: $primary-color;
             }
