@@ -4,9 +4,12 @@ import { useForm } from 'react-hook-form'
 import { apiUrl } from '../common/http'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { AdminAuthContext } from '../context/AdminAuth'
 
 const Login = () => {
   const navigate = useNavigate()
+  const { login } = useContext(AdminAuthContext)
 
 
   const {
@@ -37,7 +40,7 @@ const Login = () => {
           id: result.id,
         }
         toast.success('Login successful!')
-        localStorage.setItem('adminInfo', JSON.stringify(adminInfo))
+        login(adminInfo)
         navigate('/admin/dashboard')
       } else {
         toast.error(result.message || 'Login failed')
