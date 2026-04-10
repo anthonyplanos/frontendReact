@@ -81,11 +81,11 @@ const Login = () => {
                     required: 'Password is required' 
                   })}
                   type='password'
-                  className='form-control'
+                  className={`form-control ${errors.password ? 'is-invalid' : ''}`}
                   id='password'
                   placeholder='Password'
                 />
-                {errors.password && <p className='text-danger mt-1'>{errors.password.message}</p>}
+                {errors.password && <p className='text-danger mt-1'>{errors.password?.message}</p>}
               </div>
               <button type='submit' className='btn btn-primary'>Login</button>
             </div>
